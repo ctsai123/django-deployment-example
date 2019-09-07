@@ -1,6 +1,14 @@
 from django import template
+
 register = template.Library()
 
-@register.filter
-def cutout(value, arg):
-    return value.replace(arg, '')
+@register.filter(name='cut')
+
+def cut(value, arg):
+    """
+    This cuts out all values of "arg" from the string!
+    """
+
+    return values.replace(arg, '')
+
+# register.filter('cut', cut)
